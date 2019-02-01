@@ -1,0 +1,8 @@
+<h1> <%= @album.title %> (
+<%= @album.studio? ? 'studio' : 'live' %>)
+</h1>
+<h2>Year:
+
+    <%= @album.year %>
+</h2>
+<a href='<%= edit_album_url(@album) %>'>Edit album</a>

@@ -1,0 +1,8 @@
+<% @albums.each do |album| %>
+
+    <h3><%= album.name %> (<%= if album.studio ? 'studio' : 'live' %>)</h3>
+    <ul>
+        Year: <%= album.year %>
+    </ul>
+
+<% end %>

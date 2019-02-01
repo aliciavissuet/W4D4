@@ -13,3 +13,18 @@
  *= require_tree .
  *= require_self
  */
+
+
+
+
+body {
+    background-color: rgb(181, 190, 216); 
+    
+    font-family: 'Courier New', Courier, monospace;
+   justify-content: center;
+    align-items: center;
+}
+
+
+
+  

@@ -1,15 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MusicApp</title>
-
+    <title font='sans-serif'>MusicApp</title>
+    <%= flash[:errors] %>
+    <h1>Music App</h1>
+    <br>
     <% if logged_in? %>
-    <h3>You're in, <%= current_user.email %>! 
-    <form action=" <% session_url %> " method='post'>
-      <input type="hidden" name="_method" value="delete">
-      <input type="submit" value='log out!'>
-    </form>
-    </h3>
+    <h3 style="color:rgb(122, 9, 197); font-family:sans-serif">You're in,
+      <%= current_user.email %>!
+    
+      <form class='logout-form' action=" <%= session_url %> " method='post'>
+        <input type="hidden" name="_method" value="delete">
+        <input type="submit" value='log out!'>
+        <input type="hidden" name='authenticity_token' value='<%= form_authenticity_token %>''>
+        </form>
+        </h3>
+    <h1 class='top-of-page' style="color:rgb(218, 35, 120); font-family:sans-serif; font-size: 90px; justify-content:space-around">Music App</h1>
+
+   
     
     <% end %>
     <%= csrf_meta_tags %>
@@ -19,7 +27,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class='rest-of-page'>
     <%= yield %>
   </body>
 </html>
